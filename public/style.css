@@ -1,0 +1,351 @@
+body{
+	margin: auto;
+}
+.my-container{
+    max-width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.container{
+    margin-top: 40px;
+
+}
+.head{
+    text-align: center;
+}
+.brand-name{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 60px;
+    color: #2f5597;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.brand-details{
+    color: #0070c0;
+    height: 20px;
+}
+.brand-gstin{
+    color: #0070c0;
+    font-size: 30px;
+   
+}
+
+#taxinvoice{
+    text-transform: uppercase;
+    font-size: 35px;
+    background-color: #d0cece;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+#taxinvoice h3{
+    margin: auto;
+}
+.oriduptrip{
+    font-size: 15px;
+}
+
+.oriduptrip .col-sm-4{
+    text-align: right;
+}
+.oriduptrip .col-sm-4 input{
+  top: 0;
+  left: 0;
+     vertical-align: sub;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+    
+}
+.oriduptrip .col-sm-4 p{
+    height: 100%;
+}
+
+#section2{
+    margin-top: 20px;
+}
+.section2left{
+    max-width: 55%;
+    min-width: 55%;
+}
+
+.section-heading{
+    margin-bottom: 2px;
+    background-color: #333f4f;
+}
+.section-heading h5{
+    font-family: arial;
+    padding: 5px;
+    margin-bottom: 0;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    vertical-align: baseline;
+}
+.section h6{
+    text-transform: uppercase;
+    font-size: 20px;
+    
+}
+.section-data h6{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.side-section{
+    max-width: 45%;
+    min-width: 45%;
+}
+.side-section h6{
+    font-size: 20px;
+}
+.index{
+    text-align: right;
+}
+.side-section .data{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    text-transform: uppercase;
+}
+
+.section3{
+    margin-top: 20px;
+    background-color: #757171;
+    color: white;
+}
+.product-heading{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+label{
+    font-weight: bold;
+}
+
+span{
+    margin: 0 7px 0 7px;
+}
+
+.product-heading{
+    border: 1px solid black;
+}
+.section{
+    padding-right: 1px;
+}
+
+.products{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+#top-btn{
+    
+    display: block;
+    width: 30%;
+    margin: auto ;
+    margin-bottom: 50px;
+}
+.btn{
+    width: 100%;
+}
+.history-head{
+    text-align: center;
+    font-weight: bold;
+}
+.history{
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px; 
+    font-size: 20px;
+}
+
+#sl{
+    min-width: 5%;
+    text-align: center;
+    min-height: 35px;
+}
+#desc{
+    min-width: 35%;
+    text-align: left;
+}
+
+#hsn{
+    min-width: 7%;
+    text-align: center;
+
+}
+#weight{
+    min-width: 12%;
+    text-align: center;
+
+    
+}
+#rate{
+    text-align: center;
+    min-width: 12%;
+}
+#unit{
+    text-align: center;
+    min-width: 8%;
+}
+#amount{
+    min-width: 20%;
+    text-align: right;
+    border-right:1px solid black;
+}
+ .total{
+     border-top: 1px solid black;
+     border-bottom: 1px solid black;
+     font-size: 20px;
+     font-weight: bold;
+ }
+ 
+ .total #amount{
+     font-size:25px;
+ }
+
+.extra{
+    text-align: right !important;
+}
+
+#section4{
+    margin-top: 20px;
+}
+#inwords-section{
+    min-width: 48%;
+    max-width: 48%;
+    border:1px solid black;
+    font-size: 20px;
+    font-weight: bold;
+ 
+}
+
+
+
+#inwords{
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 5px;
+}
+#inwords2{
+    padding-left:5px;
+}
+.desc{
+    min-height: 40px;
+    font-size: 18px;
+    padding-left: 5px;
+    font-weight: bold;
+    border-top: 1px solid black;
+}
+
+.Amount-Description{
+    min-width: 32.05%;
+    max-width: 32.05%;
+}
+
+
+
+#Bank-details{
+    min-width: 48%;
+    max-width: 48%;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.bank{
+    padding: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+#terms{
+    padding-left: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    background-color: #333f4f;
+    color: white;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+
+.amounts{
+    min-height: 40px;
+    font-size: 25px;
+    text-align: right;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+#signature-section{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: 1px solid black;
+}
+#sign{
+    font-size: 20px;
+    padding: 5px;
+}
+#company{
+    margin-top: 30px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.certificate{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.whole{
+    border: 1px solid black;
+    
+}
+.col{
+    border-left: 1px solid black;
+    
+}
+
+.products{
+    
+}
+
+#signature{
+    min-height: 35px;
+}
+
+#thank-you{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #d0cece; 
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+}
+
+#login-btn{
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#button{ 
+    margin-bottom: 30px;
+    
+}

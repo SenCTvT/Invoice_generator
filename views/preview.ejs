@@ -1,0 +1,405 @@
+<% include ./partials/header %>
+<div class="container">
+    <% const first= ['one','two',
+ 'three',
+ 'four',
+ 'five',
+ 'six',
+ 'seven',
+ 'eight',
+ 'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen'
+]; %>
+<% var second = ['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'] %>
+
+<% const weight = [
+    'hundred',
+    'thousand',
+    'lakh',
+] %>
+    <div id="#section1">
+        <div class="row head">
+            <div class="col-12"><h1 class="brand-name">A K Enterprise</h1></div>
+        </div>
+        <div class="row head">
+             <div class="col-12"><h4 class="brand-details">245A, A.P.C. Road, Kolkata - 700006</h4></div>
+        </div>
+        <div class="row head">
+             <div class="col-12"><h4 class="brand-details">Mob: 9331065751, 9339976266</h4></div>
+        </div>
+        <div class="row head">
+             <div class="col-12"><h4 class="brand-gstin">GSTIN: 19EFPPS9027M1ZB</h4></div>
+        </div>
+    </div>
+    
+    <div class="row" id="taxinvoice">
+        <h3>Tax Invoice</h3>
+    </div>
+    
+    <div class="row oriduptrip">
+        <div class="col-sm-4">
+            <input type="checkbox" aria-label="Checkbox for following text input">
+            <span>ORIGINAL FOR BUYER</span>
+        </div>
+        <div class="col-sm-4">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                
+                <span>DUPLICATE FOR TRANSPORTER</span>
+          
+        </div>
+        <div class="col-sm-4">
+            
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+               
+                <span>TRIPLICATE FOR SUPPLIER</span>
+            
+            
+        </div>
+    </div>
+    <div class="row" id="section2">
+        <div class="col-sm-6 section2left">
+            <div class="row">
+                <div class="col-sm-12 section-heading">
+                    <h5>Invoice to (details of receiver)</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 section">
+                    <h6>name :</h6>
+                </div>
+                <div class="con-sm-9 section-data">
+                    <h6><%= data.name[0] %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 section">
+                    <h6>address:</h6>
+                </div>
+                <div class="con-sm-9 section-data">
+                    <h6><%= data.address1[0] %></h6>
+                    <h6><%= data.address2[0] %></h6>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-sm-6 section">
+                    <h6>Customer's GST No:</h6>
+                </div>
+                <div class="con-sm-6 section-data">
+                    <h6><%= data.gstin[0] %></h6>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-12 section-heading">
+                    <h5>consignee (details of deliver to)</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 section">
+                    <h6>name :</h6>
+                </div>
+                <div class="con-sm-9 section-data">
+                    <h6><%= data.name[1] %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 section">
+                    <h6>address:</h6>
+                </div>
+                 <div class="con-sm-9 section-data">
+                    <h6><%= data.address1[1] %></h6>
+                    <h6><%= data.address2[1] %></h6>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-sm-6 side-section">
+            <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Invoice Number :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.invoicenumber %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Invoice Date :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.invoicedate %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Place Of Supply :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.placeofsupply %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>State Code :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.statecode %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Order Mode :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.ordermode %></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Order Number :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.ordernumber %></h6>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Vehicle Number :</h6>
+                </div>
+                <div class="col-sm-5 data">
+                    <h6><%= data.vehiclenumber %></h6>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-7 index">
+                    <h6>Transportation Mode :</h6>
+                </div>
+                <div class="col-sm-5 data" style="border-bottom: 1px solid black;">
+                    <h6><%= data.transportmode %></h6>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="row section3">
+        <div class="col product-heading" id="sl">SL</div>
+        <div class="col product-heading" id="desc">Product Description</div>
+        <div class="col product-heading" id="hsn">HSN</div>
+        <div class="col product-heading" id="weight">Weight</div>
+        <div class="col product-heading" id="rate">Rate</div>
+        <div class="col product-heading" id="unit">Unit</div>
+        <div class="col product-heading" id="amount">Amount</div>
+    </div>
+    <% var amount = [], total = 0; %>
+    <% if(typeof(data.product) == "number"){ %>
+    <%      data.product = [ data.product ]; %>
+    <% } %>
+    <div class="row products">
+        <% for(var i=1; i<9 ; i++){ %>
+            <% amount[i-1] = data.quantity[i-1]*data.rate[i-1]; %>
+            <div class="col" id="sl">
+                <% if(data.quantity[i-1]){ %>
+                <%= i %>
+                <% } %>
+            </div>
+            <div class="col" id="desc"><%= data.product[i-1] %></div>
+            <div class="col" id="hsn"><%= data.hsn[i-1] %></div>
+            <div class="col" id="weight"><%= data.quantity[i-1] %></div>
+            <div class="col" id="rate">
+                <% if(data.rate[i-1]){ %>
+                <%= roundN(data.rate[i-1],2); %>
+                <% } %>
+            </div>
+            <div class="col" id="unit"><%= data.unit[i-1] %></div>
+            <div class="col" id="amount"><% if(amount[i-1] > 0){ %>
+                <%= roundN(amount[i-1],2); %>
+                <% total = total + amount[i-1]; %>
+                <% } %>
+            </div>
+            
+         <% } %>
+            <div class="col" id="sl"></div>
+            <div class="col extra" id="desc">SGST @</div>
+            <div class="col" id="hsn"></div>
+            <div class="col" id="weight"></div>
+            <div class="col extra" id="rate">9</div>
+            <div class="col" id="unit">%</div>
+            <div class="col" id="amount"><%= roundN(total*9/100, 2); %></div>
+            
+            
+            <div class="col" id="sl"></div>
+            <div class="col extra" id="desc">CGST @</div>
+            <div class="col" id="hsn"></div>
+            <div class="col" id="weight"></div>
+            <div class="col extra" id="rate">9</div>
+            <div class="col" id="unit">%</div>
+            <div class="col" id="amount"><%= roundN(total*9/100, 2); %></div>
+    </div>
+    <% var grandtotal = roundN(total+total*18/100,2); %>
+    <% var grandtotalrounded = roundN(total+total*18/100,0); %>
+    <div class="row total">
+        <div class="col" id="sl"></div>
+        <div class="col extra" id="desc">TOTAL</div>
+        <div class="col" id="hsn"></div>
+        <div class="col" id="weight"></div>
+        <div class="col" id="rate"></div>
+        <div class="col" id="unit"></div>
+        <div class="col" id="amount" style="border-right: 1px solid black;"><%= grandtotal %></div>
+    </div>
+    
+    <div class="row" id="section4">
+        <div class="col-sm-12" id="inwords-section">
+            <div class="row" id="inwords">
+                Amount in words:- 
+            </div>
+            <div class="row" id="inwords2">
+                
+                <%= toWords(grandtotalrounded); %>
+            </div>
+        </div>
+        <div class="col-sm-6 Amount-Description">
+            <div class="row desc">
+                TOTAL TAXABLE AMOUNT
+            </div>
+            <div class="row desc">
+                TOTAL TAX AMOUNT
+            </div>
+            <div class="row desc">
+                INVOICE TOTAL (ROUNDED)
+            </div>
+        </div>
+        <div class="col Amount-section">
+            <div class="row">
+                <div class="col-12 amounts">
+                <%= roundN(total,2); %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 amounts">
+                <%= roundN(total*18/100, 2); %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 amounts">
+                    <%= roundN(total+total*18/100, 0); %>.00
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row" id="section5">
+        <div class="col" id="Bank-details">
+            <div class="row bank">
+                BANK DETAILS : AXIS BANK, BRANCH: MANIKTALA
+            </div>
+            <div class="row bank">
+                A/C NO. 914020035190134, IFSC UTIB0001743
+            </div>
+            <div class="row" id="terms">
+                TERMS & CONDITIONS:
+            </div>
+            
+        </div>
+        <div class="col" id="signature-section">
+            <div class="row certificate">
+                CERTIFIED THAT THE PARTICULARS GIVEN ABOVE ARE TRUE AND CORRECT
+            </div>
+            <div class="row" id="signature">
+               
+            </div>
+            <div class="row" id="company">
+               For A.K.ENTERPRISE
+            </div>
+             <div class="row" id="sign">
+                AUTHORISED SIGNATORY
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    <div class="row" id="thank-you">
+        <div class="col-12">
+            THANK YOU
+        </div>
+   
+        
+</div>
+       
+
+       
+
+ 
+
+<% function toWords(num){
+    var digit = digitcount(num);
+    var number = num;
+    var lakh;
+    var thousand;
+    var hundred;
+    var string = " only";
+    lakh = parseInt(number/100000);
+    number = parseInt(number%100000);
+    thousand = parseInt(number/1000);
+    number = parseInt(number%1000);
+    hundred = parseInt(number/100);
+    var rest = parseInt(number % 100);
+    if(rest)
+        string = toString(rest) + string;
+    if(hundred)
+        string = toString(hundred) + " hundred " + string;
+    if(thousand)
+        string = toString(thousand) + " thousand " + string;
+    if(lakh)
+        string = toString(lakh) + " lakh " + string;
+    return string;
+} %>
+<% function toString(num){
+    // console.log("tostring"+ num);
+    var string = "";
+    if(num > 19){
+        var a = parseInt(num/10)-2;
+        console.log(a);
+        string = second[a];
+        string = string + "-" + first[num%10-1];
+    }
+    else{
+        string = first[num-1];
+    }
+    return string;
+    
+} %>
+<% function digitcount(num){
+    var digit = 0;
+    while(num!=0){
+        digit = digit+1;
+        num = num/10;
+    }
+    return digit;
+} %>
+    
+    
+    
+
+
+
+<% function roundN(num,n){
+  return parseFloat(Math.round(num * Math.pow(10, n)) /Math.pow(10,n)).toFixed(n);
+} %>
+
+
+<% include ./partials/footer %>

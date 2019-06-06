@@ -1,0 +1,196 @@
+<% include ./partials/header %>
+<div class="my-container">
+     <form class="form" action="/preview" method="POST">
+         
+         
+         <!---first row -->
+         
+         
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="invoicenumber">Invoice number :</label>
+                    <input class="form-control" type="text" value="<%= bill.invoicenumber %>" name="invoicenumber" required>  
+                </div>
+            </div>
+             <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="invoicedate3">Invoice date :</label>
+                    <input class="form-control" type="text" name="invoicedate" required>  
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--second row-->
+        
+        
+        <div class="row header">
+            <div class="col-sm-6">
+                <h4>Bill to party</h4>
+            </div>   
+            
+            <div class="col-sm-6">
+                <h4>Ship to party</h4>
+            </div>   
+        </div>
+        
+        <!--third row-->
+        
+        
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <div class="form-group">
+                
+                    <input class="form-control" type="text" placeholder="15 digit gstin" value="<%= bill.gstin[0] %>" style="text-transform:uppercase" name="gstin" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Name of party" value="<%= bill.name[0] %>" name="name" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Address Line 1" value="<%= bill.address1[0] %>" name="address1" required>  
+                </div>
+                 <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Address Line 2" value="<%= bill.address2[0] %>" name="address2" required>  
+                </div>
+            </div>
+            <div class="col-sm-6">
+            
+                <div class="form-group">
+                   
+                    <input class="form-control" type="text" placeholder="15 digit gstin" style="text-transform:uppercase"value="<%= bill.gstin[1] %>" name="gstin" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Name of party" value="<%= bill.name[1] %>" name="name" required>  
+                </div>
+                 <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Address Line 1" value="<%= bill.address1[1] %>" name="address1" required>  
+                </div>
+                 <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Address Line 2" value="<%= bill.address2[1] %>" name="address2" required>  
+                </div>
+            </div>
+            
+        </div>
+        
+        <!--forth row-->
+        
+        
+        <div class="row heading">
+            <div class="col-sm-12">
+                <h4>Product Details</h4>
+            </div>
+            
+        </div>
+        
+        
+        <!--fifth row-->
+        
+        <div id="product-form">
+        <div class="row" id="product-row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Product Description" value="<%= bill.product[0] %>" name="product">  
+                </div>                   
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="HSN" value="<%= bill.hsn[0] %>" name="hsn">  
+                </div>                   
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Quantity" value="<%= bill.quantity[0] %>" name="quantity">  
+                </div>                   
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Unit" value="<%= bill.unit[0] %>" name="unit">  
+                </div>                   
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Rate" value="<%= bill.rate[0] %>" name="rate">  
+                </div>                   
+            </div>
+            
+        </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="button" onclick="myFunction()">Add more</button>
+       
+       
+       <!--sixth row-->
+       
+       <div class="row header">
+          <div class="col-sm-12">
+                <h4>Other Details</h4>
+            </div>
+       </div>
+       
+       <!--seventh row-->
+        <div class="container">
+            <div class="form-group row">
+                <label for="VehicleNumber" class="col-sm-6 col-form-label other-lebels">Vechicle Number</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control"  placeholder="example - WB11C2018" value="<%= bill.vehiclenumber %>" name="vehiclenumber">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="TransportMode" class="col-sm-6 col-form-label other-lebels">Transport Mode</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="Lorry" name="transportmode">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="PlaceOfSuppl" class="col-sm-6 col-form-label other-lebels">Place Of Supply</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="West Bengal" name="placeofsupply">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="StateCode" class="col-sm-6 col-form-label other-lebels">State Code</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="19" name="statecode">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="OrderMode" class="col-sm-6 col-form-label other-lebels">Order Mode</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="verbal" name="ordermode">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="OrderNumber" class="col-sm-6 col-form-label other-lebels">Order Number</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="No" name="ordernumber">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="ReverseCharge" class="col-sm-6 col-form-label other-lebels">Reverse Charge</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="No" name="reversecharge">
+                </div>
+              </div>
+              
+        </div>
+       
+        <div class="form-group" id="login-btn">
+          <button class= "btn btn-lg btn-outline-dark btn-block" id ="login-btn" type="submit">Submit</button>
+        </div>
+        
+    </form>
+</div>
+<div class="footer">
+        created by SEN
+    </div> 
+
+<script> function myFunction() {
+    console.log("triggerred");
+    var itm = document.getElementById("product-row");
+    var cln = itm.cloneNode(true);
+    document.getElementById("product-form").appendChild(cln);
+}
+</script>
+    
+<% include ./partials/footer %>

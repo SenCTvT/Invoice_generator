@@ -1,0 +1,46 @@
+<% include ./partials/header %>
+<div class="container">
+    <a href="/form" class="btn btn-outline-dark" id="top-btn">Add Fresh Bill</a>
+    <div class="row">
+    <div class="col-sm-12">
+            <div class="row history-head" style= "border-bottom: 2px solid black;">
+                <div class="col-sm-2 addborder">Invoice Number</div>
+                <div class="col-sm-2 addborder">
+                       Invoice Date                 
+                </div>
+                <div class="col-sm-4 addborder">Party Name</div>
+                
+            </div>
+    </div>
+       
+    <div class="col-sm-12">
+        <% bills.forEach(function(bill){ %>
+            <div class="row history">
+                <div class="col-sm-2"><%= bill.invoicenumber %></div>
+                <div class="col-sm-2">
+                       <%= bill.invoicedate %>                 
+                </div>
+                <div class="col-sm-4"><%= bill.name[0] %></div>
+                <div class="col-sm-2"><a class="btn btn-success" href="/form/<%= bill._id %>">use</a></div>
+                <div class="col-sm-2"><a class="btn btn-success" href="/preview/<%= bill._id %>">preview</a></div>
+            </div>
+            
+            
+        <% }); %>
+        
+        
+    </div>
+    <div class="footer">
+        created by SEN
+    </div>    
+    
+</div>
+
+
+
+
+
+
+
+
+<% include ./partials/footer %>
