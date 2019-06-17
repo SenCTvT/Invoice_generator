@@ -375,7 +375,8 @@
         var a = parseInt(num/10)-2;
         console.log(a);
         string = second[a];
-        string = string + "-" + first[num%10-1];
+        if(num%10 != 0)
+            string = string + "-" + first[num%10-1];
     }
     else{
         string = first[num-1];
