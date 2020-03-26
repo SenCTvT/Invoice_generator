@@ -10,7 +10,26 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
 app.get("/", function(req, res){
+    res.render("Home");    
+});
+
+
+
+app.get("/LaunchSS", function(req, res){
+    db.BillsSS.find(function(err, bills){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render("LaunchSS", {bills: bills});
+        }
+    }).sort({"_id":-1});
+    
+});
+
+app.get("/LaunchAK", function(req, res){
     db.Bills.find(function(err, bills){
         if(err){
             console.log(err);
@@ -18,9 +37,12 @@ app.get("/", function(req, res){
         else{
             res.render("Launch", {bills: bills});
         }
-    });
+    }).sort({"_id":-1});
     
 });
+
+
+
 app.get("/form/:id", function(req, res){
     db.Bills.findById(req.params.id, function(err, bill){
         if(err){
@@ -33,23 +55,52 @@ app.get("/form/:id", function(req, res){
     });
     
 });
+
+app.get("/form3/:id", function(req, res){
+    db.BillsSS.findById(req.params.id, function(err, bill){
+        if(err){
+            console.log("err");
+        }
+        else{
+            // console.log(bill);
+             res.render("form4", {bill: bill});
+        }
+    });
+    
+});
 app.get("/preview/:id", function(req, res){
     db.Bills.findById(req.params.id, function(err, bill){
         if(err){
             console.log("err");
         }
         else{
-            // console.log(bill);
+             //console.log(bill);
              res.render("preview", {data: bill});
         }
     });
     
 });
-
+app.get("/previewSS/:id", function(req, res){
+    db.BillsSS.findById(req.params.id, function(err, bill){
+        if(err){
+            console.log("err");
+        }
+        else{
+             res.render("previewSS", {data: bill});
+        }
+    });
+    
+});
 app.get("/form", function(req, res){
     res.render("form");
     
 });
+app.get("/form3", function(req, res){
+    res.render("form3");
+    
+});
+
+
 var data;
 app.post("/preview", function(req, res){
      data = req.body;
@@ -68,15 +119,64 @@ app.post("/preview", function(req, res){
         data.rate = [ data.rate ];
         data.unit = [ data.unit ];
         
-        console.log(" hello"+ data.product);       
+     
       }
     //   console.log(data);
       res.render("preview", {data:data});
 });
 
-app.get("/preview", function(req, res){
-    res.render("preview", {data:data});
+
+
+
+app.post("/previewSS", function(req, res){
+    data = req.body;
+    db.BillsSS.create(data, function(err, callback){
+       if(err){
+         console.log(err);
+       }
+       else{
+         console.log("added new Bill");
+       }
+     });
+     if(typeof(data.product) == "string"){
+       data.product = [ data.product];
+       data.hsn = [ data.hsn ];
+       data.quantity = [ data.quantity ];
+       data.rate = [ data.rate ];
+       data.unit = [ data.unit ];  
+     }
+ 
+     res.render("previewSS", {data:data, billtype:"ss"});
+});
+
+
+app.get("/delete/ss/:id", function(req, res){
+    db.BillsSS.findByIdAndDelete(req.params.id, function(err, response){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect("/LaunchSS");
+        }
+    })
 })
+
+app.get("/delete/ak/:id", function(req, res){
+    db.Bills.findByIdAndDelete(req.params.id, function(err, response){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect("/LaunchAK");
+        }
+    })
+})
+
+
+
+// app.listen(8000, function(){
+//     console.log("server started......."+ 8000);
+// });
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("server started......."+ process.env.PORT);

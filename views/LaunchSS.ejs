@@ -1,6 +1,6 @@
 <% include ./partials/header %>
 <div class="container">
-    <a href="/form" class="btn btn-outline-dark" id="top-btn">Add Fresh Bill for AK</a>
+    <a href="/form3" class="btn btn-outline-dark" id="top-btn">Add Fresh Bill for SS</a>
     <div class="row">
     <div class="col-sm-12">
             <div class="row history-head" style= "border-bottom: 2px solid black;">
@@ -8,7 +8,7 @@
                 <div class="col-sm-2 addborder">
                        Invoice Date                 
                 </div>
-                <div class="col-sm-4 addborder">Party Name</div>
+                <div class="col-sm-3 addborder">Party Name</div>
                 
             </div>
     </div>
@@ -21,16 +21,16 @@
                        <%= bill.invoicedate %>                 
                 </div>
                 <div class="col-sm-3"><%= bill.name[0] %></div>
-                <div class="col-sm-2"><a class="btn btn-success" href="/form/<%= bill._id %>">use</a></div>
-                <div class="col-sm-2"><a class="btn btn-success" href="/preview/<%= bill._id %>">preview</a></div>
-                <div class="col-sm-1"><a class="btn btn-danger" href="/delete/ak/<%= bill._id %>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash-alt"></i></a></div>
+                <div class="col-sm-2"><a class="btn btn-success" href="/form3/<%= bill._id %>">use</a></div>
+                <div class="col-sm-2"><a class="btn btn-success" href="/previewSS/<%= bill._id %>">preview</a></div>
+                <div class="col-sm-1"><a class="btn btn-danger" href="/delete/ss/<%= bill._id %>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash-alt"></i></a></div>
             </div>
             
             
-        <% }); %>
-        
+        <% }); %> 
         
     </div>
+    <div style="height: 100px; width: 100%; text-align: center;">.....................................................</div>
     <div class="footer">
         created by SEN
     </div>    

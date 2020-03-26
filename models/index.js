@@ -6,3 +6,4 @@ mongoose.connect("mongodb+srv://soumyojit:soumyojit@watchedmovies-zrpho.mongodb.
 mongoose.Promise = Promise;
 
 module.exports.Bills = require("./database");
+module.exports.BillsSS = require("./databasess");

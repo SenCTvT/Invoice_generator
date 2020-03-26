@@ -1,0 +1,135 @@
+
+/* ==================================== SS Styles ============================================ */
+
+.paddingright0{
+    padding-right: 0;
+}
+
+.paddingleft0{
+    padding-left: 0;
+}
+
+.margin0{
+    margin-right: 0;
+}
+
+
+#sscontainer{
+    border: 2px solid black;
+    padding:0;
+}
+
+#gstinv{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.headingsection{
+    border: 1px solid black;
+}
+
+#heading{
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-family: Stencil;
+    text-align: center;
+    font-size: 65px;
+    color: rgb(0, 112, 192);
+}
+
+#subheading{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Chaparral Pro;
+    color: rgb(0, 112, 192);
+}
+
+#gstin{
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+    color: rgb(192,0,0);
+    font-weight: bold;
+}
+
+div #spacing{
+    min-height: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.title{
+    font-size: 18px;
+    vertical-align: bottom;
+    
+}
+
+.value{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+#details, .productdetailsheadingdiv{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.productdetailsheadingdiv{
+    font-size: 20px;
+}
+.row{
+    margin: 0;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.billtoparty, .minheight, .middle, .productdetailsheadingdiv{
+    font-size: 18px;
+    text-align: center;
+}
+
+.minheight{
+    min-height: 40px;
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+
+.col-sm-6{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bordered{
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+
+.terms{
+    margin-left: 30px;
+}
+
+.atitle{
+    font-weight: bold;
+    font-size: 25px;
+}
+.right{
+    text-align: right;
+    padding-right: 0;;
+}
+
+.paddingtop{
+    padding-top: 3px;
+}
+
+
+.finaltotal{
+    font-size: 27px;
+    font-weight: bold;
+}

@@ -1,0 +1,649 @@
+<% include ./partials/header2 %>
+
+<% const first= ['one','two',
+ 'three',
+ 'four',
+ 'five',
+ 'six',
+ 'seven',
+ 'eight',
+ 'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen'
+]; %>
+<% var second = ['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'] %>
+
+<% const weight = [
+    'hundred',
+    'thousand',
+    'lakh',
+] %>
+
+
+
+
+
+<div class="container" id="sscontainer">
+    <div class="headingsection">
+        <div id="gstinv"><p>GST INVOICE</p></div>
+
+        <div class="row oriduptrip">
+            <div class="col-sm-4">
+                <input type="checkbox" aria-label="Checkbox for following text input">
+                <span>ORIGINAL FOR BUYER</span>
+            </div>
+            <div class="col-sm-4">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                    
+                    <span>DUPLICATE FOR TRANSPORTER</span>
+            
+            </div>
+            <div class="col-sm-4">
+                
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                
+                    <span>TRIPLICATE FOR SUPPLIER</span>
+                
+                
+            </div>
+        </div>
+        <div><h2 id="heading">S S SYNDICATE</h2></div>
+        <div><h4 id="subheading">Deals in :  All Kinds of Ferrous, Non Ferrous, Electrical Scrap & General Order Suppliers</h4></div>
+        <div><h4 id="subheading">B/120A/H/27, MANICKTALLA MAIN ROAD, KOLKATA - 700054</h4></div>
+        <div><h4 id="subheading">Contact No : 9433060083 / 9433050522     Email ID : s.s_syndicate@yahoo.co.in</h4></div>
+        <div><h4 id="gstin">GST NO : 19ACYPJ5240K1ZY</h4></div>
+    </div>
+ <!-- <! –– ===================================================================== ––>  -->
+
+    <div id="spacing"></div>
+ 
+ 
+ <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-4 paddingtop"><span class="title">Invoice No :</span></div>
+                <div class="col-sm-8"><span class="value"><%= data.invoicenumber %></span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-5 paddingtop"><span class="title">Transport name :</span></div>
+                <div class="col-sm-7"><span class="value"><%= data.transportname %></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-4 paddingtop"><span class="title">Date of issue :</span></div>
+                <div class="col-sm-8"><span class="value"><%= data.invoicedate %></span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-5 paddingtop"><span class="title">Vechicle Number :</span></div>
+                <div class="col-sm-7"><span class="value"><%= data.vehiclenumber %></span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-4 paddingtop" style="padding-right: 0;" ><span class="title">Order Number :</span></div>
+                <div class="col-sm-8"><span class="value"><%= data.ordermode %></span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-5 paddingtop"><span class="title">Date of supply :</span></div>
+                <div class="col-sm-7"><span class="value"><%= data.invoicedate %></span></div>
+            </div>
+        </div>
+    </div>
+
+      <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-4 paddingtop"><span class="title">State :</span></div>
+                <div class="col-sm-8"><span class="value">West Bengal</span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-5 paddingtop"><span class="title">Place of supply :</span></div>
+                <div class="col-sm-7"><span class="value"><%= data.placeofsupply %></span></div>
+            </div>
+        </div>
+    </div>
+      
+     <!-- <! –– ===================================================================== ––>  -->
+
+     <div id="spacing"></div>
+     
+    <!-- <! –– ===================================================================== ––>  -->
+      
+
+    <div class="row">
+        <div class="col-sm-6 billtoparty" id="details">
+           <span >Bill to Party</span>
+        </div>
+        <div class="col-sm-6 billtoparty" id="details">
+           <span  >Ship to Party </span>
+        </div>
+    </div>
+
+      <!-- <! –– ===================================================================== ––>  -->
+
+      
+    <div class="row">
+        <div id="details" class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-3 paddingtop paddingright0"><span class="title">Name :</span></div>
+                <div class="col-sm-9 paddingright0 paddingleft0"><span class="value"><%= data.name[0] %></span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-3 paddingtop paddingright0"><span class="title">Name :</span></div>
+                <div class="col-sm-9 paddingright0 paddingleft0"><span class="value"><%= data.name[1] %></span></div>
+            </div>
+        </div>
+    </div>
+
+     <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-3  paddingtop paddingright0 "><span class="title margin0">Address :</span></div>
+                <div class="col-sm-9 paddingright0 paddingleft0"><span class="value "><%= data.address1[0] %></span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-3 paddingtop paddingright0 margin0"><span class="title margin0">Address :</span></div>
+                <div class="col-sm-9 paddingright0 paddingleft0"><span class="value"><%= data.address1[1] %></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class="col-sm-6 middle"><span class="value "><%= data.address2[0] %></span>
+           
+        </div>
+        <div id="details" class="col-sm-6 middle">
+            <span class="value"><%= data.address2[1] %></span>
+            
+        </div>
+    </div>
+
+     <!-- <! –– ===================================================================== ––>  -->
+
+     <div class="row">
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-3  paddingtop paddingright0 "><span class="title margin0">GSTIN :</span></div>
+                <div class="col-sm-9 paddingright0 paddingleft0 uppercase"><span class="value "><%= data.gstin[0] %></span></div>
+            </div>
+        </div>
+        <div id="details" class=col-sm-6>
+            <div class="row">
+                <div class="col-sm-3 paddingtop paddingright0 margin0 "><span class="title margin0">GSTIN :</span></div>
+                <div class="col-sm-9 paddingright0 paddingleft0 uppercase"><span class="value"><%= data.gstin[1] %></span></div>
+            </div>
+        </div>
+
+
+    </div>
+
+     <!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div id="details" class="col-sm-6 paddingleft0" >
+            <div class="row">
+                <div class="col-sm-6 paddingright0 ">
+                    <div class="row">
+                        <div class="col-sm-4 paddingtop paddingright0">
+                            <span class="title margin0">State :</span>
+                        </div>  
+                        <div class="col-sm-8 paddingright0">
+                            <span class="title margin0 value"><%= data.state[0] %></span>
+                        </div>  
+                    </div>
+                </div>
+                <div  class=col-sm-6>
+                    <div class="row">
+                        <div class="col-sm-3 paddingtop">
+                            <span class="title margin0">Code:</span>
+                        </div>  
+                        <div class="col-sm-8">
+                            <span class="title margin0 value"><%= data.code[0] %></span>
+                        </div>  
+                </div>  
+            </div>
+                </div>
+        </div>
+            <div id="details" class="col-sm-6 paddingleft0" >
+                <div class="row">
+                    <div class="col-sm-6 paddingright0 ">
+                        <div class="row">
+                            <div class="col-sm-4 paddingtop paddingright0">
+                                <span class="title  margin0">State :</span>
+                            </div>  
+                            <div class="col-sm-8">
+                                <span class="title margin0 value"><%= data.state[0] %></span>
+                            </div>  
+                        </div>
+                    </div>
+                    <div  class=col-sm-6>
+                                <div class="row">
+                                    <div class="col-sm-3 paddingtop">
+                                        <span class="title margin0">Code:</span>
+                                    </div>  
+                                    <div class="col-sm-8">
+                                        <span class="title margin0 value"><%= data.code[0] %></span>
+                                    </div>  
+                            </div>  
+                        </div>
+                </div>
+            </div>
+            </div>
+ <!-- <! –– ===================================================================== ––>  -->
+
+ <div id="spacing"></div>
+
+ <!-- <! –– ===================================================================== ––>  -->
+
+<div class="row">
+    <div class="col-sm-1 productdetailsheadingdiv">
+        <span class="productdetailsheading" style="font-size: 15px;">Sl no.</span>
+    </div>
+    <div class="col-sm-4 productdetailsheadingdiv">
+        <span class="productdetailsheading">Product Description</span>
+    </div>
+    <div class="col-sm-1 productdetailsheadingdiv">
+        <span class="productdetailsheading">HSN</span>
+    </div>
+    <div class="col-sm-1 productdetailsheadingdiv">
+        <span class="productdetailsheading">Unit</span>
+    </div>
+    <div class="col-sm-2 productdetailsheadingdiv">
+        <span class="productdetailsheading">Weight</span>
+    </div>
+    <div class="col-sm-1 productdetailsheadingdiv">
+        <span class="productdetailsheading">Rate</span>
+    </div>
+    <div class="col-sm-2 productdetailsheadingdiv">
+        <span class="productdetailsheading">Amount</span>
+    </div>
+</div>
+<% var amount = [], total = 0; %>
+<% if(typeof(data.product) == "number"){ %>
+<%      data.product = [ data.product ]; %>
+<% } %>
+<div class="row products">
+    <% for(var i=1; i<9 ; i++){ %>
+        <% amount[i-1] = data.quantity[i-1]*data.rate[i-1]; %>
+        <div class="col-sm-1 minheight">
+            <% if(data.quantity[i-1]){ %>
+            <span class="value"><%= i %></span>
+            <% } %>
+        </div>
+        <div class="col-sm-4 minheight" ><span class="value"><%= data.product[i-1] %></span></div>
+        <div class="col-sm-1 minheight" ><span class="value"><%= data.hsn[i-1] %></span></div>
+        <div class="col-sm-1 minheight"><span class="value"><%= data.unit[i-1] %></span></div>
+        <div class="col-sm-2 minheight"><span class="value"><%= data.quantity[i-1] %></span></div>
+        <div class="col-sm-1 minheight">
+            <% if(data.rate[i-1]){ %>
+                <span class="value"><%= roundN(data.rate[i-1],2); %></span>
+            <% } %>
+        </div>
+        
+        <div class="col-sm-2 minheight right">
+            <span>
+            <% if(amount[i-1] > 0){ %>
+                <span class="value"><%= roundN(amount[i-1],2); %></span>
+                <% total = total + amount[i-1]; %>
+            <% } %>
+            </span>
+        </div>
+        
+    <% } %>
+</div>
+
+
+ <!-- <! –– ===================================================================== ––>  -->
+
+
+ <div class="row" style="border-top: 1px solid black">
+    <div class="col-sm-6" id="details">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="title">Bank Name :</span>
+            </div>
+            <div class="col-sm-8 paddingleft0">
+                <span class="value">Axis Bank</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6" id="details paddingright0">
+        <div class="row">
+            <div class="col-sm-8"  id="details">
+                <span class="title">Total Amount before Tax</span>
+            </div>
+            <div class="col-sm-4 right"  id="details">
+                <span class="value"><%= roundN(total,2) %></span>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <!-- <! –– ===================================================================== ––>  -->
+ 
+ <div class="row">
+    <div class="col-sm-6" id="details">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="title">Brunch :</span>
+            </div>
+            <div class="col-sm-8 paddingleft0">
+                <span class="value">Kankurgachi, Kolkata</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6" id="">
+        <div class="row">
+            <div class="col-sm-8" id="details">
+                <span class="title">Add: CGST@ 9%</span>
+            </div>
+            <% if(data.gstrate == 9){ %>
+            <div class="col-sm-4 right"  id="details">
+                <span class="value"><%= roundN(total*0.09,2) %></span>
+            </div>
+            <% }else{ %>
+            <div class="col-sm-4 right"  id="details">
+                <span class="value"> ------- </span>
+            </div>
+            <% } %>
+        </div>
+    </div>
+ </div>
+
+ 
+ <!-- <! –– ===================================================================== ––>  -->
+ 
+ <div class="row">
+    <div class="col-sm-6" id="details">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="title">A/C No :</span>
+            </div>
+            <div class="col-sm-8 paddingleft0">
+                <span class="value">017010200018832</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-8" id="details">
+                <span class="title">Add: SGST@ 9%</span>
+            </div>
+            <% if(data.gstrate == 9){ %>
+            <div class="col-sm-4 right" id="details">
+                <span class="value"><%= roundN(total*0.09,2) %></span>
+            </div>
+            <% }else{ %>
+            <div class="col-sm-4 right"  id="details">
+                <span class="value"> ------- </span>
+            </div>
+            <% } %>
+        </div>
+    </div>
+ </div>
+
+ 
+ <!-- <! –– ===================================================================== ––>  -->
+    <% var grandtotal = roundN(total+total*18/100,2); %>
+    <% var grandtotalrounded = roundN(total+total*18/100,0); %>
+    <% var roundoff = grandtotalrounded- grandtotal %>
+    <div class="row">
+        <div class="col-sm-6"  id="details">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="title">IFSC Code :</span>
+                </div>
+                <div class="col-sm-8 paddingleft0">
+                    <span class="value">UTIB0000017</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                 <div class="col-sm-8"  id="details">
+                    <span class="title">Add: IGST@ 18%</span>
+                </div>
+                <% if(data.gstrate == 18){ %>
+                <div class="col-sm-4 right"  id="details">
+                    <span class="value"><%= roundN(total*0.09,2) %></span>
+                </div>
+                <% }else{ %>
+                <div class="col-sm-4 right" id="details" >
+                    <span class="value"> ------- </span>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+  
+ <!-- <! –– ===================================================================== ––>  -->
+ 
+    <div class="row">
+        <div class="col-sm-6 bordered">
+            <span class="title" style="text-decoration: underline;">Total invoice amount in words :</span>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-8" id="details">
+                    <span class="title">Round Off</span>
+                </div>
+              
+                <div class="col-sm-4 right"  id="details">
+                    <span class="value"><%= roundN(roundoff,2) %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- <! –– ===================================================================== ––>  -->
+
+ <% var str = toWords(grandtotalrounded); %>
+ <% if(str.length > 40){ 
+        var str1 = str.split(" ");
+        var str2 = "";
+        var str3 = "";
+        for(var i=0;i<4;i++){
+            str2 = str2 +" "+ str1[i];
+        }
+        for(var i=4;i<str1.length;i++){
+            str3 = str3 +" "+ str1[i];
+        }
+    } else {
+        str2 = str;  
+    } %> 
+
+
+ <div class="row">
+     <div class="col-sm-6 bordered">
+        <span class="amountinwords value" style="text-transform: uppercase"><%= str2 %></span>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-8"  id="details">
+                <span class="title">Total Tax Amount :</span>
+            </div> 
+            <div class="col-sm-4 right"  id="details">
+                <span class="value"><%= roundN(total*0.18 + roundoff,2) %></span>
+            </div>
+        </div>
+     </div>
+ </div>
+        
+<!-- <! –– ===================================================================== ––>  -->
+
+    <div class="row">
+        <div class="col-sm-6" id="details">
+            <span class="amountinwords value" style="text-transform: uppercase"><%= str3 %></span>
+        </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-8"  id="details">
+                <span class="title">Total Amount After Tax :</span>
+            </div>
+            <div class="col-sm-4 right"  id="details">
+                <span class="finaltotal"><%= roundN(total*1.18 + roundoff,2) %></span>
+            </div>
+        </div>
+        </div>
+    </div>
+<!-- <! –– ===================================================================== ––>  -->
+
+<div class="row">
+    <div class="col-sm-6 bordered" >
+        <span class="value">Terms & Conditions</span>
+    </div>
+    <div class="col-sm-6 bordered middle" >
+        <span class="atitle">For : S S Syndicate</span>
+    </div>
+  
+</div>  
+
+<!-- <! –– ===================================================================== ––>  -->
+
+<div class="row">
+    <div class="col-sm-6 bordered">
+        <span class="terms">1)  Please pay by A/C payee cheque only</span>
+    </div>
+    <div class="col-sm-6 bordered">
+        
+    </div>
+  
+</div>  
+
+<!-- <! –– ===================================================================== ––>  -->
+
+<div class="row">
+    <div class="col-sm-6 bordered">
+        <span class="terms">2) Interest be at @ 18% P. A. if not paid on presentation</span>
+    </div>
+    <div class="col-sm-6 bordered">
+       
+    </div>
+  
+</div>  
+
+<!-- <! –– ===================================================================== ––>  -->
+
+<div class="row">
+    <div class="col-sm-6 bordered">
+        <span class="terms">3) All subjected to Kolkata Jurisdiction</span>
+    </div>
+    <div class="col-sm-6 bordered">
+        
+    </div>
+  
+</div>  
+
+<!-- <! –– ===================================================================== ––>  -->
+
+<div class="row">
+    <div class="col-sm-6 bordered">
+        
+    </div>
+    <div class="col-sm-6 middle value bordered">
+        <span >Authorised Signatory</span>
+    </div>
+  
+</div>  
+
+
+<% function toWords(num){
+    var digit = digitcount(num);
+    var number = num;
+    var lakh;
+    var thousand;
+    var hundred;
+    var string = " only";
+    lakh = parseInt(number/100000);
+    number = parseInt(number%100000);
+    thousand = parseInt(number/1000);
+    number = parseInt(number%1000);
+    hundred = parseInt(number/100);
+    var rest = parseInt(number % 100);
+    if(rest)
+        string = toString(rest) + string;
+    if(hundred)
+        string = toString(hundred) + " hundred " + string;
+    if(thousand)
+        string = toString(thousand) + " thousand " + string;
+    if(lakh)
+        string = toString(lakh) + " lakh " + string;
+    return string;
+} %>
+<% function toString(num){
+    // console.log("tostring"+ num);
+    var string = "";
+    if(num > 19){
+        var a = parseInt(num/10)-2;
+        console.log(a);
+        string = second[a];
+        if(num%10 != 0)
+            string = string + "-" + first[num%10-1];
+    }
+    else{
+        string = first[num-1];
+    }
+    return string;
+    
+} %>
+<% function digitcount(num){
+    var digit = 0;
+    while(num!=0){
+        digit = digit+1;
+        num = num/10;
+    }
+    return digit;
+} %>
+    
+    
+    
+
+
+
+<% function roundN(num,n){
+  return parseFloat(Math.round(num * Math.pow(10, n)) /Math.pow(10,n)).toFixed(n);
+} %>
+
+
+<% include ./partials/footer %>
