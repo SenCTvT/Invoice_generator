@@ -1,0 +1,194 @@
+<% include ./partials/header %>
+
+    <% var today = new Date(); %>
+    <% var currentMonth = (today.getMonth()+1) %>
+    <% if(currentMonth < 10) { currentMonth = '0' + currentMonth; } %>
+    <% var date = today.getDate()+'/'+currentMonth+'/'+today.getFullYear() %>
+
+<div class="my-container">
+     <form class="form" action="/previewASC" method="POST">
+         
+         
+         <!---first row -->
+         
+         
+         <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="invoicenumber">Invoice number :</label>
+                    <input class="form-control" type="text" value="<%= bill.invoicenumber %>" name="invoicenumber" required>  
+                </div>
+            </div>
+             <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="invoicedate3">Invoice date :</label>
+                    <input class="form-control" type="text" value="<%= date %>"" name="invoicedate" required>  
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!--third row-->
+        
+        
+        <div class="row">
+            
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label>GST Number</label>
+                    <input class="form-control" type="text" placeholder="15 digit gstin" value="<%= bill.gstin[0] %>" style="text-transform:uppercase" name="gstin" required>  
+                </div>
+                <div class="form-group">
+                    <label>Party Name</label>
+                    <input class="form-control" type="text" placeholder="Name of party" value="<%= bill.name[0] %>" name="name" required>  
+                </div>
+                <div class="form-group">
+                    <label>Party Address Line 1</label>
+                    <input class="form-control" type="text" placeholder="Address Line 1" value="<%= bill.address1[0] %>" name="address1" required>  
+                </div>
+                 <div class="form-group">
+                    <label>Party Address Line 2</label>
+                    <input class="form-control" type="text" placeholder="Address Line 2" value="<%= bill.address2[0] %>" name="address2" required>  
+                </div>
+                <div class="form-group">
+                    <label>Party Address Line 2</label>
+                    <input class="form-control" type="text" placeholder="Address Line 3" value="<%= bill.address3[0] %>" name="address3" required>  
+                </div>
+                <div class="form-group">
+                    <label>Party State</label>
+                    <input class="form-control" type="text" placeholder="State" value="<%= bill.state[0] %>" name="state" required>  
+                </div>
+
+            </div>
+        </div>
+         
+           
+        
+        <!--forth row-->
+        
+        
+        <div class="row heading">
+            <div class="col-sm-12">
+                <h4>Product Details</h4>
+            </div>
+            
+        </div>
+        
+        <!--fifth row-->
+    
+
+
+        <div id="product-form">
+            <div id="0">
+            <div class="row" id="product-row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input class="form-control" type="text" value="<%= bill.product[0] %>" name="product" required>  
+                    </div>                   
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group"> 
+                        <label>HSN Code</label>
+                        <input class="form-control" type="text" value="<%= bill.hsn[0] %>" name="hsn"required>  
+                    </div>                   
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Qty</label>
+                        <input class="form-control" id="qty" type="text"  value="<%= bill.quantity[0] %>" name="quantity" required>  
+                    </div>                   
+                </div>
+                
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Rate</label>
+                        <input class="form-control" id="rate" type="text"  value="<%= bill.rate[0] %>" name="rate" required>
+                    </div>                   
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Discount rate</label>
+                        <input class="form-control" type="text"  id="discountrate"  value="<%= bill.discountrate[0] %>" name="discountrate">  
+                    </div>                   
+                </div>
+            
+            </div>
+            <div class="row" id="product-row2">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>More Product Description (If Any)</label>
+                        <input class="form-control" type="text" value="<%= bill.productdescription %>" name="productdescription" required>  
+                    </div>                   
+                </div>
+ 
+                
+                <div class="col-sm-1">
+                        
+                </div>           
+            </div>
+
+            </div>
+        </div>
+        <button type="button" id="button" class="btn btn-block btn-success" onclick="myFunction()">Add More</button>
+        
+    
+       <!--sixth row-->
+       
+        <div class="row header">
+                <div class="col-sm-12">
+                    <h4>Other Details</h4>
+                </div>
+        </div>
+       
+       <!--seventh row-->
+
+        <div class="container">
+            <div class="form-group row">
+            <label for="OrderNumber" class="col-sm-6 col-form-label other-lebels">Order Number</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" value="<%= bill.ordernumber %>" name="ordernumber">
+            </div>
+            </div>
+            <div class="form-group row">
+            <label for="OrderNumber" class="col-sm-6 col-form-label other-lebels">Order Date</label>
+            <div class="col-sm-6">
+                <input type="text"    value=" <%= bill.orderdate %>" class="form-control" name="orderdate">
+            </div>
+            </div>
+            <div class="form-group row">
+            <label for="gstrate" class="col-sm-6 col-form-label other-lebels">Gst Rate %</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" value="<%= bill.gstrate %>" name="gstrate">
+            </div>
+            </div>
+              
+        </div>
+       
+        <div class="form-group" id="login-btn">
+            <button class= "btn btn-lg btn-outline-dark btn-block" id ="login-btn" type="submit">Submit</button>
+        </div>
+        
+    </form>
+</div>
+    <div class="footer">
+        created by SEN
+    </div> 
+
+<script> 
+var count = 0;
+function myFunction() {
+    console.log("triggerred");
+    var itm = document.getElementById("0");
+   
+    var cln = itm.cloneNode(true);
+    count = count+1;
+    cln.id = count.toString(10); 
+    document.getElementById("product-form").appendChild(cln);
+   
+}
+
+</script>
+    
+<% include ./partials/footer %>

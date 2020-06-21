@@ -42,6 +42,20 @@ app.get("/LaunchAK", function(req, res){
 });
 
 
+app.get("/LaunchASC", function(req, res){
+    db.BillsASC.find(function(err, bills){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render("LaunchASC", {bills: bills});
+        }
+    }).sort({"_id":-1});
+    
+});
+
+
+
 
 app.get("/form/:id", function(req, res){
     db.Bills.findById(req.params.id, function(err, bill){
@@ -68,6 +82,23 @@ app.get("/form3/:id", function(req, res){
     });
     
 });
+
+app.get("/form5/:id", function(req, res){
+    db.BillsASC.findById(req.params.id, function(err, bill){
+        if(err){
+            console.log("err");
+        }
+        else{
+             console.log(bill);
+             res.render("form6", {bill: bill});
+        }
+    });
+    
+});
+
+
+
+
 app.get("/preview/:id", function(req, res){
     db.Bills.findById(req.params.id, function(err, bill){
         if(err){
@@ -91,6 +122,19 @@ app.get("/previewSS/:id", function(req, res){
     });
     
 });
+
+app.get("/previewASC/:id", function(req, res){
+    db.BillsASC.findById(req.params.id, function(err, bill){
+        if(err){
+            console.log("err");
+        }
+        else{
+            console.log("bill" + bill);
+            res.render("previewASC", {data: bill});
+        }
+    });
+    
+});
 app.get("/form", function(req, res){
     res.render("form");
     
@@ -99,6 +143,12 @@ app.get("/form3", function(req, res){
     res.render("form3");
     
 });
+
+app.get("/form5", function(req, res){
+    res.render("form5");
+    
+});
+
 
 
 var data;
@@ -143,11 +193,40 @@ app.post("/previewSS", function(req, res){
        data.hsn = [ data.hsn ];
        data.quantity = [ data.quantity ];
        data.rate = [ data.rate ];
-       data.unit = [ data.unit ];  
+       data.unit = [ data.unit ]; 
+       
      }
  
      res.render("previewSS", {data:data, billtype:"ss"});
 });
+
+
+
+app.post("/previewASC", function(req, res){
+    data = req.body;
+    console.log(data);
+    db.BillsASC.create(data, function(err, callback){
+       if(err){
+         console.log(err);
+       }
+       else{
+         console.log("added new Bill");
+       }
+     });
+     if(typeof(data.product) == "string"){
+       data.product = [ data.product];
+       data.hsn = [ data.hsn ];
+       data.quantity = [ data.quantity ];
+       data.rate = [ data.rate ];
+       data.discountrate = [ data.discountrate ];  
+       data.productdescription = [data.productdescription];
+     }
+    //  console.log(data);
+     res.render("previewASC", {data:data, billtype:"asc"});
+});
+
+
+
 
 
 app.get("/delete/ss/:id", function(req, res){
@@ -171,13 +250,24 @@ app.get("/delete/ak/:id", function(req, res){
         }
     })
 })
+app.get("/delete/asc/:id", function(req, res){
+    db.BillsASC.findByIdAndDelete(req.params.id, function(err, response){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect("/LaunchASC");
+        }
+    })
+})
 
 
 
-// app.listen(8000, function(){
-//     console.log("server started......."+ 8000);
-// });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("server started......."+ process.env.PORT);
+app.listen(8000, function(){
+    console.log("server started......."+ 8000);
 });
+
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("server started......."+ process.env.PORT);
+// });

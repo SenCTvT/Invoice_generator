@@ -1,0 +1,165 @@
+
+/* ==================================== ASC Styles ============================================ */
+
+/* .container::before{
+    content: "";
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIl7KYUQtUoyFHTEJpDuyCLmVGcQ0EzjrHzTLDDUeW2Xm4Gwk3&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: 50% auto;
+        opacity: 0.2;
+        top: 700px;
+        left: 600px;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+         
+   
+} */
+
+
+#gstinv{
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#heading{
+    margin-top: 0;
+    text-align: center;
+    color: rgb(0, 112, 192);
+    font-size: 60px;
+}
+
+#subheading{
+    color:rgb(0, 112, 192);
+    text-align: center;
+    font-weight: bold;
+}
+#subheading2{
+    color: #75807c;
+    text-align: center;
+    font-size: 1.40rem;
+}
+
+#gstin{
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+    color: rgb(192,0,0);
+    font-weight: bold;
+}
+
+.invoice-number-row{
+    background-color: #c0c0c0;
+    padding-top: 10px;
+    min-height: 50px;
+}
+
+.title{
+    font-size: 21px;
+    vertical-align: bottom;
+    
+}
+.atitle{
+    font-weight: bold;
+    font-size: 21px;
+}
+
+#spacing{
+    height: 20px;
+}
+.value{
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.address{
+    font-size: 21px;
+    font-weight: bold; 
+}
+.pull-right{
+    text-align: right;
+}
+.pull-left{
+    text-align: left;
+}
+.pull-middle{
+    text-align: center;
+}
+.productdescription{
+    padding-top: 5px;
+    padding-bottom: 5px; 
+}
+.minheight{
+
+   min-height: 80px;
+   text-align: center;
+   padding-top: 19px;
+   padding-bottom: 5px;
+   padding-right: 0;
+   padding-left: 0;
+}
+.minheight span{
+    margin: auto;
+    margin-top: 20px;
+}
+.Tableamount{
+    padding-top: 19px;
+   padding-bottom: 5px;
+}
+#discountHeading{
+    text-align: right;
+}
+
+
+.productdetailsheadingdiv{
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #c0c0c0;
+    padding-top: 10px;
+}
+
+.productdetailsDiscount{
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #c0c0c0;
+}
+
+.alternateRow{
+    background-color: #f5f5f5;
+}
+
+.subtotal{
+    background-color: #f2f2f2;
+}
+.lessdiscount{
+    
+}
+.finaltotal{
+    
+    
+}
+.finaltotalamount{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.invoicenumber{
+    font-weight: bold;
+    font-size: 23px
+
+}
+.bold{
+    font-weight: bold;
+}
+
+.sign{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.last{
+    background-color: #c0c0c0;
+}

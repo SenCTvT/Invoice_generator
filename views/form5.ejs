@@ -1,0 +1,207 @@
+<% include ./partials/header %>
+
+    <% var today = new Date(); %>
+    <% var currentMonth = (today.getMonth()+1) %>
+    <% if(currentMonth < 10) { currentMonth = '0' + currentMonth; } %>
+    <% var date = today.getDate()+'/'+currentMonth+'/'+today.getFullYear() %>
+
+<div class="my-container">
+     <form class="form" action="/previewASC" method="POST">
+         
+         
+         <!---first row -->
+         
+         
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="invoicenumber">Invoice number :</label>
+                    <input class="form-control" type="text" value="ASC/00/2020-21" name="invoicenumber" required>  
+                </div>
+            </div>
+             <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="invoicedate3">Invoice date :</label>
+                    <input class="form-control" type="text" name="invoicedate" value="<%= date %>" required>  
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!--third row-->
+        
+        
+        <div class="row">
+            
+            <div class="col-sm-12">
+                <div class="form-group">              
+                    <input class="form-control" type="text" id="gst" placeholder="15 digit gstin" style="text-transform:uppercase" name="gstin" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" id = "name" placeholder="Name of party" name="name" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" id= "add1" placeholder="Address Line 1" name="address1" required>  
+                </div>
+                 <div class="form-group">
+                    <input class="form-control" type="text" id= "add2" placeholder="Address Line 2" name="address2" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" id= "add2" placeholder="Address Line 3" name="address3" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="State" value="West Bengal" name="state" required>  
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="StateCode" value="19" name="code" required>  
+                </div>
+            </div>
+        </div>
+         
+           
+        
+        <!--forth row-->
+        
+        
+        <div class="row heading">
+            <div class="col-sm-12">
+                <h4>Product Details</h4>
+            </div>
+            
+        </div>
+        
+        <!--fifth row-->
+        
+
+
+        <div id="product-form">
+            <div id="0">
+            <div class="row" id="product-row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Product name" name="product" required>  
+                    </div>                   
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group"> 
+                        <input class="form-control" type="text" placeholder="HSN" name="hsn"required>  
+                    </div>                   
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <input class="form-control" id="qty" type="text" placeholder="Quantity" name="quantity" required>  
+                    </div>                   
+                </div>
+                
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <input class="form-control" id="rate" type="text"  placeholder="Rate"  name="rate" required>
+                    </div>                   
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <input class="form-control" type="text"  id="discountrate" onchange="discount_amount_calc(parent.id)" placeholder="Discount Rate" vaule="%" name="discountrate">  
+                    </div>                   
+                </div>
+            
+            </div>
+            <div class="row" id="product-row2">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="More Description" name="productdescription" required>  
+                    </div>                   
+                </div>
+                
+                <div class="col-sm-1">
+                        
+                </div>           
+            </div>
+
+            </div>
+        </div>
+        <button type="button" id="button" class="btn btn-block btn-success" onclick="myFunction()">Add More</button>
+        
+       <script>
+
+
+        var rate = document.getElementById("rate");
+    
+
+       
+        function amount_calc() {
+
+            var first_number = parseInt(document.getElementById("qty").value);
+            var second_number = parseInt(document.getElementById("rate").value);
+            var result = first_number * second_number;
+
+            document.getElementById("amountbox").value = result;
+        }
+
+        function discount_amount_calc() {
+
+            var first_number = parseInt(document.getElementById("amountbox").value);
+            var second_number = parseInt(document.getElementById("discountrate").value);
+            var result = first_number * second_number /100;
+
+            document.getElementById("discountamount").value = result;
+        }
+        </script>
+       <!--sixth row-->
+       
+        <div class="row header">
+                <div class="col-sm-12">
+                    <h4>Other Details</h4>
+                </div>
+        </div>
+       
+       <!--seventh row-->
+
+        <div class="container">
+            <div class="form-group row">
+            <label for="OrderNumber" class="col-sm-6 col-form-label other-lebels">Order Number</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" value="verbal" name="ordernumber">
+            </div>
+            </div>
+            <div class="form-group row">
+            <label for="OrderNumber" class="col-sm-6 col-form-label other-lebels">Order Date</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="orderdate">
+            </div>
+            </div>
+            <div class="form-group row">
+            <label for="gstrate" class="col-sm-6 col-form-label other-lebels">Gst Rate %</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" value="9" name="gstrate">
+            </div>
+            </div>
+              
+        </div>
+       
+        <div class="form-group" id="login-btn">
+            <button class= "btn btn-lg btn-outline-dark btn-block" id ="login-btn" type="submit">Submit</button>
+        </div>
+        
+    </form>
+</div>
+    <div class="footer">
+        created by SEN
+    </div> 
+
+<script> 
+var count = 0;
+function myFunction() {
+    console.log("triggerred");
+    var itm = document.getElementById("0");
+   
+    var cln = itm.cloneNode(true);
+    count = count+1;
+    cln.id = count.toString(10); 
+    document.getElementById("product-form").appendChild(cln);
+   
+}
+
+</script>
+    
+<% include ./partials/footer %>
