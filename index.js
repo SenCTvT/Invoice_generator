@@ -264,10 +264,8 @@ app.get("/delete/asc/:id", function(req, res){
 
 
 
-app.listen(8000, function(){
-    console.log("server started......."+ 8000);
-});
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("server started......."+ process.env.PORT);
-// });
+
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("server started......."+ process.env.PORT);
+});
