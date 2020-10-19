@@ -269,3 +269,7 @@ app.get("/delete/asc/:id", function(req, res){
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("server started......."+ process.env.PORT);
 });
+// app.listen(8000, function(err){ 
+//     if (err) console.log("Error in server setup") 
+//     console.log("Server listening on Port", 8000); 
+// }) 

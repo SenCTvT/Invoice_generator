@@ -258,10 +258,14 @@
 
 
  <!-- <! –– ===================================================================== ––>  -->
- <% var grandtotal = roundN(total+total*18/100,2); %>
-    <% var grandtotalrounded = roundN(total+total*18/100,0); %>
+ <% var taxable = total - totalDiscount; %>
+ <% var grandtotal = roundN(taxable+taxable*18/100,2); %>
+    <% var grandtotalrounded = roundN(taxable+taxable*18/100,0); %>
     <% var roundoff = grandtotalrounded- grandtotal %>
-
+    <% console.log(grandtotal) %>
+    <% console.log(grandtotalrounded) %>
+    <% console.log(taxable) %>
+    <% console.log(roundoff) %>
  <div class="row">
     <div class="col-sm-7 bordered">
         <span class="title" style="text-decoration: underline;">Total invoice amount in words :</span>
