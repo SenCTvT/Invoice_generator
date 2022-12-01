@@ -261,7 +261,16 @@ app.get("/delete/asc/:id", function(req, res){
     })
 })
 
-
+app.get("/delete", function(req, res){
+    db.BillsASC.findByIdAndDelete(req.params.id, function(err, response){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect("/LaunchASC");
+        }
+    })
+})
 
 
 
